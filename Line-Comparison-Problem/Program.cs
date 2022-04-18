@@ -3,7 +3,6 @@ Console.WriteLine("Welcome to Line Comparison Computation Program ");
 
 //Length of line
 
-
 Console.WriteLine("Please Enter x1 and y1 coordinates : ");
 var x1 = Convert.ToDouble(Console.ReadLine());
 var y1 = Convert.ToDouble(Console.ReadLine());
@@ -28,11 +27,26 @@ var r = Convert.ToDouble(Console.ReadLine());
 var s = Convert.ToDouble(Console.ReadLine());
 var finalResult2 = Distance(p, r, q, s);
 Console.WriteLine("Distance between {0},{1} and {2},{3} is {4:F}", p, q, r, s, finalResult2);
-bool status = finalResult.Equals(finalResult2);
+/*bool status = finalResult.Equals(finalResult2);
 if (status)
-
+ 
     Console.WriteLine("{0} is equal to {1}",
                             finalResult, finalResult2);
 else
     Console.WriteLine("{0} is not equal to {1}",
-     finalResult, finalResult2);
+                            finalResult, finalResult2);
+*/
+int res = finalResult.CompareTo(finalResult2);
+Console.WriteLine("Difference Between Line1 and Line2 is " + res);
+if (res == 0)
+{
+    Console.WriteLine("Lengths are equal!");
+}
+if (res >= 0)
+{
+    Console.WriteLine("Line 1 is greator than line 2 ");
+}
+else
+{
+    Console.WriteLine("Line 2 is greator than line 1 ");
+}
